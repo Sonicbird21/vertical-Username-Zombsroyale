@@ -22,7 +22,7 @@ string_hexxed = str(decode)
 name_split = ",".join(string_hexxed[i:i + 2] for i in range(0, len(string_hexxed),2))
 
 
-with open('verticalUsername_DoubleClickMe.reg', "a") as o:
+with open('verticalUsername_DoubleClickMe.reg', "w") as o:
 	o.write(reg_default_text + "\n" + "\n" + reg_path + "\n" + reg_display_name + name_split + ",03")
 
 print("Created Registry File, double click it to change your Username!")
