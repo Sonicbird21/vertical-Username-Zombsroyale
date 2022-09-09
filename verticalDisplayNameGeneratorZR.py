@@ -5,7 +5,15 @@ reg_path = "[HKEY_CURRENT_USER\Software\Yang Liu\Zombs Royale]"
 reg_display_name='"displayName_h2033418264"=hex:'
 
 
-
+print('''
+    :::::::::         ::::::::        :::   :::        :::::::::       :::::::: 
+          :+:       :+:    :+:       :+:+: :+:+:      :+:    :+:     :+:    :+: 
+        +:+        +:+    +:+      +:+ +:+:+ +:+     +:+    +:+     +:+         
+      +#+         +#+    +:+      +#+  +:+  +#+     +#++:++#+      +#++:++#++   
+    +#+          +#+    +#+      +#+       +#+     +#+    +#+            +#+    
+  #+#           #+#    #+#      #+#       #+#     #+#    #+#     #+#    #+#     
+#########       ########       ###       ###     #########       ########       
+    ''')
 
 print("-" * 60)
 print("Sonic's Vertical name Generator v.1.0 (Currently only works when killing people or being killed!)")
