@@ -15,9 +15,9 @@ print('''
 #########       ########       ###       ###     #########       ########       
     ''')
 
-print("-" * 60)
+print("-" * 97)
 print("Sonic's Vertical name Generator v.1.0 (Currently only works when killing people or being killed!)")
-print("-" * 60)
+print("-" * 97)
 
 print("Please enter the name you want to have vertically: ")
 name = input().encode("utf-8")
