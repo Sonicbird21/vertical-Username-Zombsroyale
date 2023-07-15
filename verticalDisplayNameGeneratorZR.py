@@ -1,8 +1,4 @@
-import binascii
-
-reg_default_text = "Windows Registry Editor Version 5.00"
-reg_path = "[HKEY_CURRENT_USER\Software\Yang Liu\Zombs Royale]"
-reg_display_name='"displayName_h2033418264"=hex:'
+import winreg
 
 
 print('''
@@ -16,21 +12,17 @@ print('''
     ''')
 
 print("-" * 97)
-print("Sonic's Vertical name Generator v.1.0 (Currently only works when killing people or being killed!)")
+print("Sonic's Vertical name Generator v.2.0")
 print("-" * 97)
-
 print("Please enter the name you want to have vertically: ")
-name = input().encode("utf-8")
 
+name_input = input()
+binary_data = bytes(f"{name_input}\x03", "utf-8")
 
-hexxed = binascii.hexlify(name)
-decode = hexxed.decode()
-string_hexxed = str(decode)
+key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, "SOFTWARE\\Yang Liu\\Zombs Royale", 0, winreg.KEY_ALL_ACCESS)
 
-name_split = ",".join(string_hexxed[i:i + 2] for i in range(0, len(string_hexxed),2))
+def setDisplayName(name):
+    winreg.SetValueEx(key, "displayName_h2033418264", 0, winreg.REG_BINARY, name)
 
-
-with open('verticalUsername_DoubleClickMe.reg', "w") as o:
-	o.write(reg_default_text + "\n" + "\n" + reg_path + "\n" + reg_display_name + name_split + ",03")
-
-print("Created Registry File, double click it to change your Username!")
+setDisplayName(binary_data)
+print(f"Your name has been updated to {name_input}" + ".")
