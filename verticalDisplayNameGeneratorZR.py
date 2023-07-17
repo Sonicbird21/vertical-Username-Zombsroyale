@@ -12,7 +12,7 @@ print("""
     """)
 
 print("-" * 97)
-print("Sonic's Vertical name Generator v.2.1")
+print("Sonic's Vertical name Generator v.2.2")
 print("-" * 97)
 print("""Options: 
       1. EOL Method
