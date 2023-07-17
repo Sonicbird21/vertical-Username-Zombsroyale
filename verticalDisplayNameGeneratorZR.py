@@ -16,7 +16,7 @@ print("Sonic's Vertical name Generator v.2.3")
 print("-" * 97)
 print("""Options: 
       1. EOL Method
-      2. Line Seperator Method
+      2. Line Separator Method
       3. Both""")
 
 
@@ -52,7 +52,7 @@ while True:
             ls_name = make_ls_name(name_input)
             
             setDisplayName(ls_name)
-            print(f"Your name has been updated to {name_input}" + " using the Line Seperator method. \n(Note: This method significantly reduces the amount of characters you can use in your name.)")
+            print(f"Your name has been updated to {name_input}" + " using the Line Separator method. \n(Note: This method significantly reduces the amount of characters you can use in your name.)")
 
             break
         elif method == 3:
