@@ -7,3 +7,5 @@ Steps:
 3. There is no need to restart ZR.
 
 Note: Since the Line Separator counts as 3 characters, your names' maximal length is reduced using the Line Seperator or Both option.
+
+![pic](https://github.com/Sonicbird21/vertical-Username-Zombsroyale/assets/67420120/3ba59afc-a20b-48ca-aa72-a4802baef003)
