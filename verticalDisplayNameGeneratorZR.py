@@ -82,7 +82,7 @@ while True:
                 print("Invalid input, please try again.")
                 break
             
-            print(f"\nYour name has been updated to {name_input}" + " using the Line Seperator method. \n(Note: This method significantly reduces the amount of characters you can use in your name.)")
+            print(f"\nYour name has been updated to {name_input}" + " using the Line Separator method. \n(Note: This method significantly reduces the amount of characters you can use in your name.)")
 
             break
         elif method == 3:
