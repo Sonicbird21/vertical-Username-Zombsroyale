@@ -16,7 +16,7 @@ print("Sonic's Vertical name Generator v.3.0")
 print("-" * 97)
 print("""Options: 
       1. EOL Method
-      2. Line Seperator Method
+      2. Line Separator Method
       3. Both""")
 
 
