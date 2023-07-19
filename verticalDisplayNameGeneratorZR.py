@@ -12,11 +12,11 @@ print("""
     """)
 
 print("-" * 97)
-print("Sonic's Vertical name Generator v.2.3")
+print("Sonic's Vertical name Generator v.3.0")
 print("-" * 97)
 print("""Options: 
       1. EOL Method
-      2. Line Separator Method
+      2. Line Seperator Method
       3. Both""")
 
 
@@ -35,6 +35,19 @@ def make_ls_name(name):
                     display_name += ls_char
     return display_name
 
+def make_ls_name_custom(name, sp_indices):
+    ls_char = b"\xE2\x80\xA8"
+    display_name = b""
+    index = 0
+
+    for i, char in enumerate(name.encode('utf-8')):
+        display_name += bytes([char])
+        if index < len(sp_indices) and i == sp_indices[index]:
+            display_name += ls_char
+            index += 1
+               
+    return display_name
+
 while True:
     try:
         method = int(input(">> "))
@@ -43,33 +56,52 @@ while True:
             binary_data = bytes(f"{name_input}\x03", "utf-8")
 
             setDisplayName(binary_data)
-            print(f"Your name has been updated to {name_input}" + " using the End of Line method.")
+            print(f"\nYour name has been updated to {name_input}" + " using the End of Line method.")
 
             break
         elif method == 2:
-            name_input = input("Enter your display name: ")
-
-            ls_name = make_ls_name(name_input)
             
-            setDisplayName(ls_name)
-            print(f"Your name has been updated to {name_input}" + " using the Line Separator method. \n(Note: This method significantly reduces the amount of characters you can use in your name.)")
+            print("\nOptions:")
+            mode = int(input("      1. Default mode\n      2. Custom location\n>> "))
+            if mode == 1:
+                name_input = input("Enter your display name: ")
+                ls_name = make_ls_name(name_input)
+                setDisplayName(ls_name)
+
+            elif mode == 2:
+                name_input = input("Enter your display name: ")
+                sp_indices_input = input("Enter the location where to put the line separator (e.g., 1,3,5): ")
+                sp_indices = [int(i.strip()) for i in sp_indices_input.split(",")]
+
+                sp_indices_diff = [num - 1 for num in sp_indices]
+
+                ls_name = make_ls_name_custom(name_input, sp_indices_diff)
+                setDisplayName(ls_name)
+
+            else:
+                print("Invalid input, please try again.")
+                break
+            
+            print(f"\nYour name has been updated to {name_input}" + " using the Line Seperator method. \n(Note: This method significantly reduces the amount of characters you can use in your name.)")
 
             break
         elif method == 3:
+            
             name_input = input("Enter your display name: ")
-
             ls_name = make_ls_name(name_input)
             
             setDisplayName(ls_name + b"\x03")
-            print(f"Your name has been updated to {name_input}" + " using both methods. \n(Note: The Line Separator method significantly reduces the amount of characters you can use in your name.)")
+            print(f"\nYour name has been updated to {name_input}" + " using both methods. \n(Note: The Line Separator method significantly reduces the amount of characters you can use in your name.)")
             break
 
         else:
             print("Invalid input, please try again.")
+            break
     except ValueError:
         print("Invalid input, please try again.")
+        break
     except KeyboardInterrupt:
         print("\nExiting...")
         exit()
-
+        
 input("\nPress enter to exit... ")
