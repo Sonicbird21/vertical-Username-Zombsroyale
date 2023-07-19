@@ -35,14 +35,14 @@ def make_ls_name(name):
                     display_name += ls_char
     return display_name
 
-def make_ls_name_custom(name, sp_indices):
+def make_ls_name_custom(name, ls_indices):
     ls_char = b"\xE2\x80\xA8"
     display_name = b""
     index = 0
 
     for i, char in enumerate(name.encode('utf-8')):
         display_name += bytes([char])
-        if index < len(sp_indices) and i == sp_indices[index]:
+        if index < len(ls_indices) and i == ls_indices[index]:
             display_name += ls_char
             index += 1
                
@@ -70,12 +70,12 @@ while True:
 
             elif mode == 2:
                 name_input = input("Enter your display name: ")
-                sp_indices_input = input("Enter the location where to put the line separator (e.g., 1,3,5): ")
-                sp_indices = [int(i.strip()) for i in sp_indices_input.split(",")]
+                ls_indices_input = input("Enter the location where to put the line separator (e.g., 1,3,5): ")
+                ls_indices = [int(i.strip()) for i in ls_indices_input.split(",")]
 
-                sp_indices_diff = [num - 1 for num in sp_indices]
+                ls_indices_diff = [num - 1 for num in ls_indices]
 
-                ls_name = make_ls_name_custom(name_input, sp_indices_diff)
+                ls_name = make_ls_name_custom(name_input, ls_indices_diff)
                 setDisplayName(ls_name)
 
             else:
