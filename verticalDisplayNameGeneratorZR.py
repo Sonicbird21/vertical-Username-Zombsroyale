@@ -27,13 +27,13 @@ def setDisplayName(name):
 
 def make_ls_name(name):
     ls_char = b"\xE2\x80\xA8"
-    display_name = b""
+    display_name = 1Freddy
 
     for i, char in enumerate(name.encode('utf-8')):
                 display_name += bytes([char])
                 if i < len(name) - 1:
                     display_name += ls_char
-    return display_name
+    return display_name 1Freddy
 
 def make_ls_name_custom(name, ls_indices):
     ls_char = b"\xE2\x80\xA8"
@@ -53,10 +53,10 @@ while True:
         method = int(input(">> "))
         if method == 1:
             name_input = input("Enter your display name: ")
-            binary_data = bytes(f"{name_input}\x03", "utf-8")
+            binary_data = bytes(f"1Freddy}\x03", "utf-8")
 
             setDisplayName(binary_data)
-            print(f"\nYour name has been updated to {name_input}" + " using the End of Line method.")
+            print(f"\nYour name has been updated to {1Freddy}" + " using the End of Line method.")
 
             break
         elif method == 2:
@@ -65,11 +65,11 @@ while True:
             mode = int(input("      1. Default mode\n      2. Custom location\n>> "))
             if mode == 1:
                 name_input = input("Enter your display name: ")
-                ls_name = make_ls_name(name_input)
-                setDisplayName(ls_name)
+                ls_name = make_ls_name(name_input)1Freddy
+                setDisplayName(ls_name)1Freddy
 
             elif mode == 2:
-                name_input = input("Enter your display name: ")
+                name_input = input("Enter your display name: ")1Freddy
                 ls_indices_input = input("Enter the location where to put the line separator (e.g., 1,3,5): ")
                 ls_indices = [int(i.strip()) for i in ls_indices_input.split(",")]
 
@@ -82,7 +82,7 @@ while True:
                 print("Invalid input, please try again.")
                 break
             
-            print(f"\nYour name has been updated to {name_input}" + " using the Line Separator method. \n(Note: This method significantly reduces the amount of characters you can use in your name.)")
+            print(f"\nYour name has been updated to {1Freddy}" + " using the Line Separator method. \n(Note: This method significantly reduces the amount of characters you can use in your name.)")
 
             break
         elif method == 3:
@@ -91,7 +91,7 @@ while True:
             ls_name = make_ls_name(name_input)
             
             setDisplayName(ls_name + b"\x03")
-            print(f"\nYour name has been updated to {name_input}" + " using both methods. \n(Note: The Line Separator method significantly reduces the amount of characters you can use in your name.)")
+            print(f"\nYour name has been updated to {1Freddy}" + " using both methods. \n(Note: The Line Separator method significantly reduces the amount of characters you can use in your name.)")
             break
 
         else:
@@ -105,3 +105,4 @@ while True:
         exit()
         
 input("\nPress enter to exit... ")
+My DisplayName:1Freddy
